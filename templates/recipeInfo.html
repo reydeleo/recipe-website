@@ -1,0 +1,97 @@
+{% extends "test-layout.html" %}
+
+      {% block title %}
+      Recipe List
+      {% endblock %}
+
+		{% block content %}
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="{{base_url()}}" >Recipes</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	  
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+			  <a class="nav-link" href="{{base_url()}}">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">Link</a>
+			</li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Dropdown
+			  </a>
+			  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Something else here</a>
+			  </div>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link disabled" href="#"></a>
+			</li>
+		  </ul>
+		  <form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		  </form>
+		</div>
+	</nav>
+	<br>
+	
+<div class="container">
+		<div id="infoJumbo" class="jumbotron text-center">
+			<div class="container">
+				<h1 id="recipeHeading" class="jumbotron-heading"><recipe id="{{recipe.getId()}}">{{ recipe.getName() }}</recipe></h1>
+				<br>
+				<p>
+					<a href="#" class="btn btn-outline-dark"><strong>Prep Time:</strong> {{ recipe.getPrepTime() }} min.</a>
+					<a href="#" class="btn btn-outline-dark"><strong>Total Time:</strong> {{ recipe.getTotalTime() }} min.</a>
+					<a href="#" class="btn btn-outline-dark"><strong>Rating:</strong> 5 out of 5</a>
+				</p>
+			</div>
+		</div>
+</div>		
+	
+	
+	<div class ="container">
+		<div id="top">
+			<h2><recipe id="{{recipe.getId()}}"></recipe></h2>
+		</div>
+
+		<div class="row">
+			<div id="recipeInformation" class="col">
+				<p><strong>Description</strong></p>
+				<p>{{ recipe.getDescription() }}</p>
+				<br>
+				<p><strong>Time</strong></p>
+				<p><label><i>Prep Time:</i></label> {{ recipe.getPrepTime() }} min.</p>
+				<p><label><i>Total Time:</label></i> {{ recipe.getTotalTime() }} min.</p>
+				<br>
+
+				<p><strong>Steps</strong></p>
+				<div>
+					<ul id="steps" class="list-group list-group-flush">
+						{% for step in steps %}
+						<li id="s{{ step.getid }}" class="list-group-item list-group-item-secondary"><step id="{{step.getId}}">{{ step.getDescription() }}</step></li>
+						{% endfor %}
+					</ul>
+					<br>
+					<button type="button" id="add" class="btn btn-outline-primary">Add Step</button>
+					<!-- <button type="button" id="add"> + </button> -->
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<img class="thumb" src={{ recipe.getImageUrl() }} style="width:450px;height:400px;">
+			</div>
+
+
+		</div>
+	</div>
+		<script src="{{ base_url() }}/../recipes.js"></script>
+		<link rel="stylesheet" href="{{ base_url() }}/../style.css">
+      {% endblock %}

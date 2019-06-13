@@ -1,0 +1,13 @@
+{
+    "minimum-stability": "dev",
+
+    "require": {
+        "slim/slim": "^3.9",
+        "propel/propel": "^2.0@dev",
+        "slim/twig-view": "dev-master"
+    },
+
+    "autoload": {
+  		"classmap" : ["models"]
+	}
+}

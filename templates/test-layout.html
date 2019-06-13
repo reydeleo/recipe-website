@@ -1,0 +1,24 @@
+<html>
+
+        <head>
+          <link rel="stylesheet" href="style.css">
+        	<script
+  				src="https://code.jquery.com/jquery-3.3.1.js"
+  				integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  				crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  				<script>
+  					var baseurl = "{{base_url()}}"
+  				</script>
+          <title>{% block title %}{% endblock %}</title>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        </head>
+
+        <body>
+
+          {% block content %}
+          {% endblock %}      
+
+        </body>
+</html>

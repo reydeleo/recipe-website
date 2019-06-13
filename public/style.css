@@ -1,0 +1,35 @@
+#mainPageJumbo{
+    background-image: url("chicken.jpg");
+    background-size: cover;
+    min-height: 250px;
+}
+#infoJumbo{
+    min-height: 200px;
+    background-color: rgb(250, 250, 250);
+}
+#titleMain{
+    color: white
+}
+#header-text{
+    color:white;
+    font-size: 19px;
+}
+.main{
+    min-height: 800px;
+}
+.h1{
+    margin: 0;
+}
+#recipeHeading{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 36pt;
+}
+#recipeInformation{
+    background-color: rgb(214, 216, 219);
+}
+p {
+    margin:0;
+}
+#steps{
+    background-color: rgba(241, 241, 241, 0.986);
+}
